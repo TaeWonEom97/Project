@@ -2,6 +2,7 @@ package project.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class projectEx {
 	static {
@@ -16,6 +17,7 @@ public class projectEx {
 	public static void example() {
 		Connection con=null;
 		PreparedStatement pstmt=null;
+		ResultSet rs=null;
 		try {
 		} catch (Exception e) {
 			e.printStackTrace();
