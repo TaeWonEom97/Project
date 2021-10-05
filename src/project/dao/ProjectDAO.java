@@ -1,6 +1,7 @@
 package project.dao;
 
 public class ProjectDAO {
+
   static {
 	 
 		  try {
@@ -14,5 +15,5 @@ public class ProjectDAO {
   }
 	
 	
-	
 }
+
