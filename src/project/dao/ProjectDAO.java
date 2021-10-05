@@ -1,6 +1,7 @@
 package project.dao;
 
 public class ProjectDAO {
+<<<<<<< HEAD
 	
 	
 	static {
@@ -13,4 +14,14 @@ public class ProjectDAO {
 	} 
 	
 	
+=======
+	static {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+>>>>>>> branch 'master' of https://github.com/TaeWonEom97/Project.git
 }
