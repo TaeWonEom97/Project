@@ -1,19 +1,14 @@
 package project.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
 
 public class ProjectDAO {
+
 	
-	static {
-		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	
+
 	public static Connection Getconnection() {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "c##scott";
@@ -23,9 +18,29 @@ public class ProjectDAO {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		return con;
-	}
-	
-	
-}
+
+		  
+	   public List <EmpDTO> select (){
+		   Connection con =null;
+		   PreparedStatement pstmt= null;
+		   ResultSet rs = null;
+		   
+		   List<EmpDTO>list = new ArrayList<EmpDTO>;
+		    
+		   try {
+			   con = getConnection();
+			   String sql = "select*from emp_temp order by hiredate dest";
+			   pstmt = con.prepareStatement(sql);
+			   rs= pstmt.executeQuery();
+			   while(rs.next()) {
+				   EmpDTO dto = new EmpDTO();
+				   
+			   }
+		   }
+		   
+	   }
+  }
+
+
+
+
