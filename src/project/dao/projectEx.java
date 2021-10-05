@@ -1,12 +1,22 @@
 package project.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class projectEx {
 	static {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			Connection con=null;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void example() {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		try {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -16,5 +26,6 @@ public class projectEx {
 				e2.printStackTrace();
 			}
 		}
+
 	}
 }
