@@ -3,6 +3,7 @@ package project.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectDAO {
@@ -20,23 +21,26 @@ public class ProjectDAO {
 			e.printStackTrace();
 
 		  
-	   public List <EmpDTO> select (){
+	   public List <ProjectEmpDTO> select (){
 		   Connection con =null;
 		   PreparedStatement pstmt= null;
 		   ResultSet rs = null;
 		   
-		   List<EmpDTO>list = new ArrayList<EmpDTO>;
+		   List<ProjectEmpDTO>list = new ArrayList<ProjectEmpDTO>;
 		    
 		   try {
-			   con = getConnection();
+			   con = Getconnection();
 			   String sql = "select*from emp_temp order by hiredate dest";
 			   pstmt = con.prepareStatement(sql);
 			   rs= pstmt.executeQuery();
 			   while(rs.next()) {
-				   EmpDTO dto = new EmpDTO();
+				   ProjectEmpDTO dto = new ProjectEmpDTO();
 				   
 			   }
-		   }
+			   
+			   
+		   
+	   
 		   
 	   }
   }
