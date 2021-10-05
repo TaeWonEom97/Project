@@ -6,7 +6,7 @@ public class ProjectDAO {
 	static {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
